@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "author": "Ram verma",
+  "editor": "wokwi",
+  "parts": [
+    {"type":"board-st-nucleo-c031c6","id":"stm","top":0,"left":0,"attrs":{}},
+    {"type":"wokwi-potentiometer","id":"temp","top":-20,"left":360,"attrs":{"value":"400"}},
+    {"type":"wokwi-potentiometer","id":"vib","top":80,"left":360,"attrs":{"value":"180"}},
+    {"type":"wokwi-potentiometer","id":"current","top":180,"left":360,"attrs":{"value":"500"}},
+    {"type":"wokwi-potentiometer","id":"rpm","top":280,"left":360,"attrs":{"value":"700"}},
+    {"type":"wokwi-led","id":"normal","top":20,"left":600,"attrs":{"color":"green","label":"NORMAL"}},
+    {"type":"wokwi-led","id":"warning","top":110,"left":600,"attrs":{"color":"yellow","label":"WARNING"}},
+    {"type":"wokwi-led","id":"fault","top":200,"left":600,"attrs":{"color":"red","label":"FAULT"}},
+    {"type":"wokwi-buzzer","id":"buzzer","top":300,"left":600,"attrs":{"volume":"0.05"}}
+  ],
+  "connections": [
+    ["temp:SIG","stm:A0","green",[]],["temp:VCC","stm:3V3","red",[]],["temp:GND","stm:GND","black",[]],
+    ["vib:SIG","stm:A1","green",[]],["vib:VCC","stm:3V3","red",[]],["vib:GND","stm:GND","black",[]],
+    ["current:SIG","stm:A2","green",[]],["current:VCC","stm:3V3","red",[]],["current:GND","stm:GND","black",[]],
+    ["rpm:SIG","stm:A3","green",[]],["rpm:VCC","stm:3V3","red",[]],["rpm:GND","stm:GND","black",[]],
+    ["stm:D2","normal:A","green",[]],["normal:C","stm:GND","black",[]],
+    ["stm:D3","warning:A","green",[]],["warning:C","stm:GND","black",[]],
+    ["stm:D4","fault:A","green",[]],["fault:C","stm:GND","black",[]],
+    ["stm:D5","buzzer:1","green",[]],["buzzer:2","stm:GND","black",[]]
+  ],
+  "dependencies": {}
+}
