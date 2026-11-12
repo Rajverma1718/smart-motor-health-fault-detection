@@ -45,7 +45,7 @@ void calculateMotorHealth() {
   else if (motor.rpm < 700) motor.fault = "STALL_OR_LOW_SPEED";
   else motor.fault = "NONE";
 
-  if (motor.fault != "NONE") motor.state = "FAULT";
+  if (strcmp(motor.fault, "NONE") != 0) motor.state = "FAULT";
   else if (motor.health < 70.0f) motor.state = "WARNING";
   else motor.state = "NORMAL";
 }
